@@ -41,7 +41,21 @@ int main()
             scanf("%c",&enter);
         }
         if(code==2)
-        {}
+        {
+            if(index>0)
+            {
+                printf("正在删除最后一名学生成绩……\n");
+                index--;
+                printf("删除完成，点击回车继续\n");
+            }
+            else
+            {
+                printf("删除失败，无学生成绩信息，点击回车继续\n");
+            }
+            char enter;
+            scanf("%c",&enter);
+            scanf("%c",&enter);
+        }
         if(code==3)
         {}
         if(code==4)
