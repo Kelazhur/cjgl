@@ -39,7 +39,10 @@ int main()
         if(code==7)
         {}
         if(code==8)
-        {}
+        {
+            printf("正在退出……\n");
+            break;
+        }
     }
     return 0;
 }
