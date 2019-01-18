@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 struct Student
 {
     int yuwen;
@@ -119,7 +120,23 @@ int main()
             scanf("%c",&enter);
         }
         if(code==6)
-        {}
+        {
+            int high=0;
+            char high_name[100];
+            for(int i=0;i<index;i++)
+            {
+                if(arr[i].zong>high)
+                {
+                    high=arr[i].zong;
+                    strcpy(high_name,arr[i].name);
+                }
+            }
+            printf("总分最高的学生为%s,分数为%d\n",high_name,high);
+            printf("点击回车继续\n");
+            char enter;
+            scanf("%c",&enter);
+            scanf("%c",&enter);
+        }
         if(code==7)
         {}
         if(code==8)
