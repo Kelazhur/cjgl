@@ -57,7 +57,23 @@ int main()
             scanf("%c",&enter);
         }
         if(code==3)
-        {}
+        {
+            if(index>0)
+            {
+                for(int i=0;i<index;i++)
+                {
+                    printf("第%d个学生%s的语文成绩为：%d分，数学成绩为：%d分，英语成绩为：%d分\n",i+1,arr[i].name,arr[i].yuwen,arr[i].shuxue,arr[i].yingyu);
+                }
+            }
+            else
+            {
+                printf("查询失败，无学生成绩信息，点击回车继续\n");
+            }
+            printf("点击回车继续\n");
+            char enter;
+            scanf("%c",&enter);
+            scanf("%c",&enter);
+        }
         if(code==4)
         {}
         if(code==5)
