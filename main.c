@@ -5,6 +5,7 @@ struct Student
     int shuxue;
     int yingyu;
     char name[100];
+    int zong;
 };
 struct Student arr[1024];
 int index=0;
@@ -34,6 +35,7 @@ int main()
             scanf("%d",&(arr[index].shuxue));
             printf("请输入学生英语成绩：\n");
             scanf("%d",&(arr[index].yingyu));
+            arr[index].zong=arr[index].yuwen+arr[index].shuxue+arr[index].yingyu;
             index++;
             printf("添加完成，点击回车继续\n");
             char enter;
@@ -67,7 +69,7 @@ int main()
             }
             else
             {
-                printf("查询失败，无学生成绩信息，点击回车继续\n");
+                printf("查询失败，无学生成绩信息\n");
             }
             printf("点击回车继续\n");
             char enter;
@@ -75,7 +77,22 @@ int main()
             scanf("%c",&enter);
         }
         if(code==4)
-        {}
+        {
+            if(index>0)
+            {
+                for(int i=0;i<index;i++)
+                {
+                    if(arr[i].zong<180)
+                    {
+                    printf("不及格学生有%s\n",arr[i].name);
+                    }
+                }
+            }
+            else
+            {
+                printf("查询失败，无学生成绩信息\n");
+            }
+        }
         if(code==5)
         {}
         if(code==6)
