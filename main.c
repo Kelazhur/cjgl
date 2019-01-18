@@ -92,9 +92,32 @@ int main()
             {
                 printf("查询失败，无学生成绩信息\n");
             }
+            printf("点击回车继续\n");
+            char enter;
+            scanf("%c",&enter);
+            scanf("%c",&enter);
         }
         if(code==5)
-        {}
+        {
+            if(index>0)
+            {
+                for(int i=0;i<index;i++)
+                {
+                    if(arr[i].yuwen<60&&arr[i].shuxue<60&&arr[i].yingyu<60)
+                    {
+                    printf("所有科目都不及格的学生有%s\n",arr[i].name);
+                    }
+                }
+            }
+            else
+            {
+                printf("查询失败，无学生成绩信息\n");
+            }
+            printf("点击回车继续\n");
+            char enter;
+            scanf("%c",&enter);
+            scanf("%c",&enter);
+        }
         if(code==6)
         {}
         if(code==7)
