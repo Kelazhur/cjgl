@@ -7,6 +7,7 @@ struct Student
     int yingyu;
     char name[100];
     int zong;
+    int average;
 };
 struct Student arr[1024];
 int index=0;
@@ -37,6 +38,7 @@ int main()
             printf("请输入学生英语成绩：\n");
             scanf("%d",&(arr[index].yingyu));
             arr[index].zong=arr[index].yuwen+arr[index].shuxue+arr[index].yingyu;
+            arr[index].average=(arr[index].yuwen+arr[index].shuxue+arr[index].yingyu)/3;
             index++;
             printf("添加完成，点击回车继续\n");
             char enter;
@@ -138,7 +140,36 @@ int main()
             scanf("%c",&enter);
         }
         if(code==7)
-        {}
+        {
+            int average=0;
+            char average_name[100];
+            if(index>0)
+            {
+                for(int i=0;i<index;i++)
+                {
+                    if(arr[i].yuwen>60&&arr[i].shuxue>60&&arr[i].yingyu>60)
+                    {
+                        for(int i=0;i<index;i++)
+                        {
+                            if(arr[i].average>average)
+                            {
+                                average=arr[i].average;
+                                strcpy(average_name,arr[i].name);
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                printf("查询失败，无学生成绩信息\n");
+            }
+            printf("平均分最高，且没有不及格的学生是%s\n",average_name);
+            printf("点击回车继续\n");
+            char enter;
+            scanf("%c",&enter);
+            scanf("%c",&enter);
+        }
         if(code==8)
         {
             printf("正在退出……\n");
